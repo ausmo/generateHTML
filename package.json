@@ -1,0 +1,26 @@
+{
+  "name": "generatehtml",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ausmo/generateHTML.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ausmo/generateHTML/issues"
+  },
+  "homepage": "https://github.com/ausmo/generateHTML#readme",
+  "devDependencies": {
+    "jest": "^29.0.3"
+  }
+}
