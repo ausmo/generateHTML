@@ -17,6 +17,10 @@ describe("Employee", () => {
   describe("getName", () => {
 
     it('should return the name that I give it, upon instantiation', () => {
+      let name = "Austin"
+      let newEmployee = new Employee("Austin", 1, "austin1moore@gmail.com")
+
+
 
     });
 
