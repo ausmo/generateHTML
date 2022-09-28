@@ -2,7 +2,7 @@
 
 This team generator prompts the user with questions that enable them to assemble their crew!
 
-![](../../../OneDrive/Pictures/team%20generator.jpg)
+![](team%20generator.jpg)
 
 # Contact
 austin1moore@gmail.com
