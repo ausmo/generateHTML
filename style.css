@@ -1,0 +1,22 @@
+#jumbotron{
+    shadow: 2px 2px 10px black;
+    justify-content: center;
+}
+
+
+.allCards{
+    display:flex;
+}
+
+
+.card {
+  text-align: center;
+  height: auto;
+  margin: auto;
+  margin-top: 100px;
+  display:flex;
+  flex-wrap: wrap;
+  display: inline-block;
+  box-shadow: 2px 2px 10px black;
+  border-radius: 5px;
+}
