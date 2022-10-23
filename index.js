@@ -3,8 +3,11 @@ const fs = require("fs")
 const Intern = require("./lib/Intern")
 const Manager = require("./lib/Manager.js")
 const Engineer = require("./lib/Engineer.js")
-const renderHTML = require("./src/renderHTML")
-const allEmployees = []
+const Employees = []
+const path = require("path")
+const OUTPUT_DIR = path.resolve(__dirname, "output")
+const outputPath = path.join(OUTPUT_DIR,"generatedHTML.html")
+const render = require("./src/renderHTML")
 
 //These prompts enable the user to set up their team
 function generateEmployee() {
@@ -63,7 +66,7 @@ function generateEngineer() {
     ]).then(response => {
         let engineer = new Engineer(response.name, response.id, response.email, response.github)
 
-        allEmployees.push(engineer)
+        Employees.push(engineer)
         generateEmployee()
     })
 }
@@ -93,7 +96,7 @@ function generateIntern() {
     ]).then(response => {
         let intern = new Intern(response.name, response.id, response.email, response.school)
 
-        allEmployees.push(intern)
+        Employees.push(intern)
         generateEmployee()
     })
 }
@@ -123,7 +126,7 @@ function generateManager() {
     ]).then(response => {
         let manager = new Manager(response.name, response.id, response.email, response.officeNumber)
 
-        allEmployees.push(manager)
+        Employees.push(manager)
         generateEmployee()
     })
 }
@@ -131,7 +134,10 @@ function generateManager() {
 //here the function creates the html that makes
 //the employee cards
 function makeHTML() {
-    fs.writeFile('generate-index.html', renderHTML(allEmployees), (err) =>
+    if(!fs.existsSync(OUTPUT_DIR)){
+        fs.mkdirSync(OUTPUT_DIR)
+    }
+    fs.writeFileSync(outputPath, render(Employees), (err) =>
         err ? console.log(err) : console.log('HTML has been generated')
     );
 }
